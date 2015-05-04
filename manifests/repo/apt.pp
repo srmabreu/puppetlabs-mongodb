@@ -7,7 +7,7 @@ class mongodb::repo::apt inherits mongodb::repo {
 
   if($::mongodb::repo::ensure == 'present' or $::mongodb::repo::ensure == true) {
     apt::source { 'repo.mongodb.org':
-      location    => $::mongodb::repo::location
+      location    => $::mongodb::repo::location,
       repos       => 'trusty/mongodb-org/3.0 multiverse',
       key         => '7F0CEB10',
       key_server  => 'hkp://keyserver.ubuntu.com:80',
